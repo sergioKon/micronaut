@@ -44,9 +44,9 @@ public class ServiceDispatcher {
            if(fileHandlers ==null)  {
                throw  new IllegalAccessException(" folder for file is empty ");
            }
-           for (File f: fileHandlers) {
+           for (File file: fileHandlers) {
 
-               Class<?> clazz = Class.forName(baseHandlerPackage + '.' + f.getName().substring(0, f.getName().length() - 6));
+               Class<?> clazz = Class.forName(baseHandlerPackage + '.' + file.getName().substring(0, file.getName().length() - 6));
                if(clazz.getName().contains("Abstract")) {
                    continue;
                }
@@ -58,7 +58,4 @@ public class ServiceDispatcher {
       public HTTPAbstractHandler getService(MediaType key){
          return mapServices.get(key);
       }
-      public Map<MediaType, HTTPAbstractHandler> getAll(){
-        return mapServices;
-    }
 }
