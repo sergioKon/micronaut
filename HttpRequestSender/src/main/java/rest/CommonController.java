@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import server.base.config.ServiceDispatcher;
 
 
 import java.io.IOException;
@@ -43,7 +44,7 @@ public class CommonController {
           return HttpStatus.OK;
         }
         MediaType mediaType =   MediaType.valueOf(contentType);
-        HTTPAbstractHandler handler= server.base.config.ServiceDispatcher.getInstance().getService(mediaType);
+        HTTPAbstractHandler handler= ServiceDispatcher.getInstance().getService(mediaType);
 
         try {
             handler.proceed(request);
