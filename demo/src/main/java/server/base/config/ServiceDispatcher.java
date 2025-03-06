@@ -1,7 +1,9 @@
 package server.base.config;
 
+
 import httpHandlers.HTTPAbstractHandler;
 import org.springframework.http.MediaType;
+
 
 import java.io.File;
 import java.net.URL;
@@ -14,7 +16,7 @@ public class ServiceDispatcher {
         private static  final ServiceDispatcher  instance = new ServiceDispatcher();
     }
 
-     private final Map<MediaType, HTTPAbstractHandler>  mapServices = new HashMap<>();
+     private final HashMap<MediaType, HTTPAbstractHandler> mapServices = new HashMap<>();
      protected String baseHandlerPackage="httpHandlers";
 
 

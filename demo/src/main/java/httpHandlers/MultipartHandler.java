@@ -1,13 +1,14 @@
 package httpHandlers;
 
-import converters.*;
-
+import converters.GifParser;
+import converters.JSonParser;
+import converters.PgnParser;
+import converters.XMLParser;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.MediaType;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
-
 
 import java.io.IOException;
 import java.util.List;
