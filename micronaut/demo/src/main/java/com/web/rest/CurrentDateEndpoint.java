@@ -20,8 +20,5 @@ public class CurrentDateEndpoint {
     public String currentDatePrefix(HttpServletRequest request) {
         Date currentDate = new Date(System.currentTimeMillis());
         return " current date = " + ": " + currentDate + " content type = "+ request.getContentType();  }
-
-
-
 }
 
