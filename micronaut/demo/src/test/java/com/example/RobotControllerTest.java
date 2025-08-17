@@ -32,12 +32,11 @@ class RobotControllerTest {
     }
 
     private String executeRequest(BlockingHttpClient client, String path) {
-        String response=  client.retrieve(HttpRequest.GET(path), Argument.of(String.class));
-        return response;
+        return client.retrieve(HttpRequest.GET(path), Argument.of(String.class));
     }
 
     @Test
-    public void prototypeBlockingTest() throws InterruptedException {
+    public void prototypeBlockingTest() {
         long time= System.currentTimeMillis();
         int numberOfThreads =10;
         //CountDownLatch latch = new CountDownLatch(numberOfThreads);
