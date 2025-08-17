@@ -22,7 +22,7 @@ public class HelloController {
     @Get(produces = MediaType.TEXT_PLAIN,uri = "/hello") // (2)
     public String hello(HttpServletRequest request) {
         request.getContentType();
-        return robotService.getSerialNumber();
+        return robotService.getSerialNumber() + "\t"+request.getContentType();
     }
 
 }
