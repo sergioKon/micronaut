@@ -12,7 +12,6 @@ import java.util.Date;
 
 @Endpoint(id = "date",
         prefix = "custom",
-        defaultEnabled = true,
         defaultSensitive = false)
 public class CurrentDateEndpoint {
 

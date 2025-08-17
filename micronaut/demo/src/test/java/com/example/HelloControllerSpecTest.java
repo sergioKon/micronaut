@@ -11,10 +11,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @MicronautTest
-public class HelloControllerSpec {
+public class HelloControllerSpecTest {
 
-    @Inject
-    EmbeddedServer server; // (1)
 
     @Inject
     @Client("/")
@@ -22,6 +20,7 @@ public class HelloControllerSpec {
 
     @Test
     void testHelloWorldResponse() {
+
         String response = client.toBlocking() // (3)
                 .retrieve(HttpRequest.GET("/hello"));
         assertEquals("Hello World", response); // (4)

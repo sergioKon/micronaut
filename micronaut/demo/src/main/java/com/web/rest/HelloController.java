@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 
-@Controller("/") // (1)
+@Controller // (1)
 public class HelloController {
 
     @Inject
@@ -20,7 +20,7 @@ public class HelloController {
     @Inject
     RobotService robotService;
     @Get(produces = MediaType.TEXT_PLAIN,uri = "/hello") // (2)
-    public String hello(HttpServletRequest request) throws ServletException, IOException {
+    public String hello(HttpServletRequest request) {
         request.getContentType();
         return robotService.getSerialNumber();
     }
