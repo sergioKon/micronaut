@@ -1,5 +1,7 @@
 package rest;
 
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,11 +15,15 @@ import org.springframework.web.multipart.MultipartFile;
 public class MainController {
 
     @ResponseBody
-    @GetMapping("/main")
+    @PostMapping("/main")
     public String hello() {
         return "Hello Controller";
     }
 
+    @PostMapping("/greet")
+    public String greet(String name) {
+        return "Hello, " + name;
+    }
     @PostMapping(path = "/upload")
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
         return file.isEmpty() ?
